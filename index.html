@@ -28,7 +28,7 @@
 .hidden{display:none!important}</style>
 </head>
 <body>
-<header class="topbar">
+<header class="topbar" id="top">
  <a class="brand" href="#" aria-label="PlayTogether home"><span class="brand-mark">2P</span><span>play<span>together</span></span></a>
  <label class="search"><span class="search-icon">⌕</span><input id="search" type="search" placeholder="What are you playing today?" aria-label="Search games"></label>
  <nav class="header-actions" aria-label="Quick links"><a href="#popular">Popular</a><a href="#fresh">New games</a></nav>
@@ -51,6 +51,7 @@
   <button class="load-more" id="load-more">Show more games</button>
  </section>
  <div id="shelves">
+  <section class="shelf" id="fresh"><div class="shelf-head"><h2>Fresh picks</h2><button class="text-link" data-show-category="All">Browse all games →</button></div><div class="shelf-track" id="fresh-track"></div></section>
   <section class="shelf" id="friends-shelf"><div class="shelf-head"><h2>Play with friends</h2><button class="text-link" data-show-category="Party">Explore games →</button></div><div class="shelf-track" id="friends-track"></div></section>
   <section class="shelf" id="racing-shelf"><div class="shelf-head"><h2>Race, drive & drift</h2><button class="text-link" data-show-category="Racing">Explore games →</button></div><div class="shelf-track" id="racing-track"></div></section>
   <section class="shelf" id="action-shelf"><div class="shelf-head"><h2>Action & adventure</h2><button class="text-link" data-show-category="Action">Explore games →</button></div><div class="shelf-track" id="action-track"></div></section>
@@ -107,7 +108,7 @@ function render(){
 function renderShelf(id,filter){const node=document.getElementById(id);games.filter(filter).slice(0,10).forEach(g=>node.appendChild(createCard(g)));}
 const featureGrid=document.getElementById('feature-grid');
 [games[0],games[6],games[2],games[12],games[10]].forEach((g,i)=>featureGrid.appendChild(createCard(g,true)));
-renderShelf('friends-track',g=>['Co-op','Party','Classics'].includes(g.cat));
+renderShelf('fresh-track',g=>games.indexOf(g)>=games.length-10);\nrenderShelf('friends-track',g=>['Co-op','Party','Classics'].includes(g.cat));
 renderShelf('racing-track',g=>g.cat==='Racing');
 renderShelf('action-track',g=>['Action','Adventure'].includes(g.cat));
 renderShelf('puzzle-track',g=>['Puzzle','Classics'].includes(g.cat));
