@@ -1,10 +1,24 @@
-# Neon Rivals — 2 Player Games
+# PlayTogether — Browser Games
 
-A polished, free, browser-based **two-player arcade racing game**. Play head-to-head on the same keyboard — no install, account, server, external library, ads, or tracking required.
+A Poki-inspired game discovery homepage with an original PlayTogether identity and locally playable mini-game prototypes. The interface is designed for desktop, tablet, and mobile browsers.
 
-## Play locally
+## Features
 
-Open `index.html` in a modern browser, or run a tiny local server:
+- Compact search header and category navigation.
+- Featured game mosaic and popular-games grid.
+- Horizontal collections for fresh picks, co-op/party, racing, action/adventure, and puzzles/classics.
+- Search, category filtering, and show-more behavior.
+- In-page modal game player; clicking a card does not navigate to another game website.
+- Original canvas mini-game demos with keyboard and basic touch controls.
+- No framework, build step, external game-site redirect, ads, or tracking.
+
+## About the playable games
+
+The catalogue uses familiar game titles as discovery-style examples, but the playable content in this repository is **an original set of small genre-based demos**, not the full licensed Poki games or exact recreations. Current demo modes include paddle play, obstacle dodging, arena movement, co-op collection, reaction timing, and tic-tac-toe. The project is independently branded and is not affiliated with Poki.
+
+## Run locally
+
+Open `index.html` in a modern browser, or start a local server:
 
 ```bash
 python -m http.server 8000
@@ -12,34 +26,23 @@ python -m http.server 8000
 
 Then visit [http://localhost:8000](http://localhost:8000).
 
-## Controls
+## Deploy with Cloudflare Pages
 
-| Action | Player 1 · Cyan | Player 2 · Pink |
-|---|---|---|
-| Accelerate | W | ↑ |
-| Brake / reverse | S | ↓ |
-| Steer left | A | ← |
-| Steer right | D | → |
-| Pause / resume | Esc or P | Esc or P |
+1. Open Cloudflare Dashboard → **Workers & Pages**.
+2. Connect the GitHub repository `rajeevtv1972-crypto/2player-games`.
+3. Set the production branch to `main`.
+4. Select **None** as the framework preset.
+5. Leave the build command empty.
+6. Set the build output directory to `.` (the repository root).
+7. Deploy.
 
-Choose 1, 3, or 5 laps and Chill, Arcade, or Turbo engine power. Stay on the asphalt to keep your speed. First to finish the selected laps wins.
+Every push to `main` can trigger a new deployment when the Pages project is connected to GitHub.
 
-## Deploy free with Cloudflare Pages
+## Project files
 
-1. Open [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages**.
-2. Select **Create** → **Pages** → **Connect to Git**.
-3. Choose this repository: `2player-games`.
-4. Set the production branch to `main`.
-5. As this is a static site, leave the build command empty and set the build output directory to `/` (the repository root).
-6. Deploy. Cloudflare will provide a public `pages.dev` URL.
-
-Every push to `main` can trigger a fresh deployment.
-
-## Files
-
-- `index.html` — the complete game, styles, canvas renderer, controls, and game loop in one dependency-free file.
+- `index.html` — homepage, styles, filtering/search logic, and canvas mini-game prototypes.
 - `README.md` — this guide.
 
-## Notes
+## Next step
 
-This version is local multiplayer on one device and keyboard. Online play across separate devices would require a room service and real-time networking, which are intentionally not needed for this lightweight static build.
+To host a real catalogue of distinct games, add original games or games whose developers explicitly permit embedding/redistribution, and connect each catalogue card to its approved game build. Many commercial game pages block third-party iframe embedding, so an iframe alone is not a reliable substitute for a game integration.
