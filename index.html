@@ -108,7 +108,8 @@ function render(){
 function renderShelf(id,filter){const node=document.getElementById(id);games.filter(filter).slice(0,10).forEach(g=>node.appendChild(createCard(g)));}
 const featureGrid=document.getElementById('feature-grid');
 [games[0],games[6],games[2],games[12],games[10]].forEach((g,i)=>featureGrid.appendChild(createCard(g,true)));
-renderShelf('fresh-track',g=>games.indexOf(g)>=games.length-10);\nrenderShelf('friends-track',g=>['Co-op','Party','Classics'].includes(g.cat));
+renderShelf('fresh-track',g=>games.indexOf(g)>=games.length-10);
+renderShelf('friends-track',g=>['Co-op','Party','Classics'].includes(g.cat));
 renderShelf('racing-track',g=>g.cat==='Racing');
 renderShelf('action-track',g=>['Action','Adventure'].includes(g.cat));
 renderShelf('puzzle-track',g=>['Puzzle','Classics'].includes(g.cat));
