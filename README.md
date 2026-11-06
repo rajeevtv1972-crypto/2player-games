@@ -1,48 +1,41 @@
-# PlayTogether — Browser Games
+# PlayTogether — 2 Player Games
 
-A Poki-inspired game discovery homepage with an original PlayTogether identity and locally playable mini-game prototypes. The interface is designed for desktop, tablet, and mobile browsers.
+A Poki-inspired two-player game discovery page with an original PlayTogether brand, responsive catalogue, category filters, search, feature shelves, SEO guide content, FAQs, and in-page local mini-game demos.
 
-## Features
+## Page structure
 
-- Compact search header and category navigation.
-- Featured game mosaic and popular-games grid.
-- Horizontal collections for fresh picks, co-op/party, racing, action/adventure, and puzzles/classics.
-- Search, category filtering, and show-more behavior.
-- In-page modal game player; clicking a card does not navigate to another game website.
-- Original canvas mini-game demos with keyboard and basic touch controls.
-- No framework, build step, external game-site redirect, ads, or tracking.
+- Sticky header with search and responsive category navigation.
+- “Popular this week” horizontal game shelf.
+- Dedicated “2 Player Games” heading and featured game selection.
+- Category chips for action, co-op, platform, sports, racing, arcade, classics, and party games.
+- Responsive game catalogue with search and show-more behavior.
+- Editorial sections for co-op games, versus games, game genres, win mechanics, and FAQs.
+- Modal game player that runs the local mini-game prototypes in the same page.
 
-## About the playable games
+## Important note about the catalogue
 
-The catalogue uses familiar game titles as discovery-style examples, but the playable content in this repository is **an original set of small genre-based demos**, not the full licensed Poki games or exact recreations. Current demo modes include paddle play, obstacle dodging, arena movement, co-op collection, reaction timing, and tic-tac-toe. The project is independently branded and is not affiliated with Poki.
+Game titles are used as catalogue labels to make the discovery page familiar. The game window launches original, lightweight genre-based prototypes from this repository; it does **not** reproduce or redistribute the commercial Poki games themselves. The design, typography, cards, and decorative artwork are independently implemented, and the project is not affiliated with Poki.
 
 ## Run locally
 
-Open `index.html` in a modern browser, or start a local server:
+Open `index.html` in a modern browser, or start a server:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000).
+Then open [http://localhost:8000](http://localhost:8000).
 
-## Deploy with Cloudflare Pages
+## Cloudflare Pages deployment
 
-1. Open Cloudflare Dashboard → **Workers & Pages**.
-2. Connect the GitHub repository `rajeevtv1972-crypto/2player-games`.
-3. Set the production branch to `main`.
-4. Select **None** as the framework preset.
-5. Leave the build command empty.
-6. Set the build output directory to `.` (the repository root).
-7. Deploy.
+- Framework preset: **None**
+- Build command: leave blank
+- Build output directory: `. ` is not correct; use `.` (repository root)
+- Production branch: `main`
 
-Every push to `main` can trigger a new deployment when the Pages project is connected to GitHub.
+The site is static HTML, CSS, and JavaScript. No build step or framework is required.
 
-## Project files
+## Files
 
-- `index.html` — homepage, styles, filtering/search logic, and canvas mini-game prototypes.
-- `README.md` — this guide.
-
-## Next step
-
-To host a real catalogue of distinct games, add original games or games whose developers explicitly permit embedding/redistribution, and connect each catalogue card to its approved game build. Many commercial game pages block third-party iframe embedding, so an iframe alone is not a reliable substitute for a game integration.
+- `index.html` — the complete responsive page, game catalogue, filters, SEO content, and local canvas mini-game player.
+- `README.md` — project notes and deployment instructions.
