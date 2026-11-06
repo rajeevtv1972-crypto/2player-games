@@ -30,7 +30,7 @@ Then open [http://localhost:8000](http://localhost:8000).
 
 - Framework preset: **None**
 - Build command: leave blank
-- Build output directory: `. ` is not correct; use `.` (repository root)
+- Build output directory: `.` (repository root)
 - Production branch: `main`
 
 The site is static HTML, CSS, and JavaScript. No build step or framework is required.
